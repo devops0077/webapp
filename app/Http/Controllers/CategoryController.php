@@ -96,7 +96,7 @@ class CategoryController extends Controller
             'category_title' => 'required|string|max:255',
             'meta_desc' => 'required|string|max:255',
             'keywords' => 'required|string|max:255',
-            'desc' => 'required|string',
+            'short_desc' => 'required|string',
             'image_thumb' => 'nullable|image',
         ]);
 
@@ -105,7 +105,7 @@ class CategoryController extends Controller
                 'category_title' => $request->category_title,
                 'meta_desc' => $request->meta_desc,
                 'keywords' => $request->keywords,
-                'desc' => $request->desc,
+                'short_desc' => $request->short_desc,
             ]);
 
             return redirect()->route('all_categories')->with('success', 'Category Updated Successfully.');

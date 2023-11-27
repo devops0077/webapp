@@ -48,13 +48,32 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="short_desc"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Short Description') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="short_desc" type="text"
+                                        class="form-control @error('short_desc') is-invalid @enderror" name="short_desc"
+                                        value="{{ old('short_desc', $category->meta_desc) }}" required
+                                        autocomplete="short_desc">
+
+                                    @error('short_desc')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label for="keywords"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Keywords') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="keywords" type="text"
                                         class="form-control @error('keywords') is-invalid @enderror" name="keywords"
-                                        value="{{ old('keywords', $category->keywords) }}" required autocomplete="keywords">
+                                        value="{{ old('keywords', $category->keywords) }}" required
+                                        autocomplete="keywords">
 
                                     @error('keywords')
                                         <span class="invalid-feedback" role="alert">
